@@ -1,13 +1,13 @@
 <?php 
-	define ("Localhost","mysql.hostinger.vn");
+	/*define ("Localhost","mysql.hostinger.vn");
 	define ("UserName","u620217281_root");
 	define ("Password","LLH@lelamhai1993");
-	define ("NameDB", "u620217281_book");
+	define ("NameDB", "u620217281_book");*/
 
-	/*define ("Localhost","127.0.0.1");
+	define ("Localhost","127.0.0.1");
 	define ("UserName","root");
 	define ("Password","");
-	define ("NameDB", "app_book");*/
+	define ("NameDB", "app_book");
 
 	function connection()
 	{

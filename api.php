@@ -22,7 +22,6 @@ if ($method == 'POST') {
 		$avatar = $path;
 	}
 	
-
 	$ac = new Account($username, $pass, $fullname, $phone, $address, $role, $avatar);
 	if(empty($username) && empty($pass))
 	{
@@ -36,7 +35,9 @@ if ($method == 'POST') {
 		if(CreateAccountBUS($ac))
 		{
 			$arrayName = array(
-				'message' => "Finish"
+				'status' => 200,
+				'data' => '',
+				'message' => "Success",
 				);
 		}else
 		{

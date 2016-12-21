@@ -17,4 +17,38 @@
 
 		return true;
 	}
+
+	function CheckMailDAL($mail)
+	{
+		$sql = "SELECT * FROM account WHERE UserName = '$mail'";
+		$cn = connection();
+		$result = $cn->query($sql);
+		if(mysqli_num_rows($result) >= 1){
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+
+
+	function SigInDAL($username, $pass, $token)
+	{
+		$sql = "SELECT * FROM account WHERE UserName = '$username' AND Password = '$pass' ";
+		$cn = connection();
+		$result = $cn->query($sql);
+		if(mysqli_num_rows($result) >= 1){
+			$sqlU = "UPDATE account SET Token ='$token' WHERE UserName = '$username' ";
+			$cn->query($sqlU);
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+
+	/*function CheckTokenDAL($username, $pass)
+	{
+
+	}*/
 ?>
